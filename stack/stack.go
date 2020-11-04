@@ -14,7 +14,7 @@ type Stack struct {
 }
 
 func New() *Stack {
-	var stack *Stack = new(Stack)
+	stack := new(Stack)
 
 	stack.depth = 0
 	return stack
