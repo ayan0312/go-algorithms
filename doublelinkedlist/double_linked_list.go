@@ -74,8 +74,6 @@ func (ll *DoubleLinkedList) Delete(index int) (*Node, error) {
 	if index == 0 {
 		deleted = ll.Head
 		ll.Head = ll.Head.Next
-		ll.Head.Prev = nil
-		deleted.Next = nil
 	} else {
 		node, _ := ll.Node(index)
 		prev := node.Prev
@@ -84,8 +82,6 @@ func (ll *DoubleLinkedList) Delete(index int) (*Node, error) {
 		prev.Next = next
 		next.Prev = prev
 
-		node.Next = nil
-		node.Prev = nil
 		deleted = node
 	}
 
