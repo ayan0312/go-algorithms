@@ -5,6 +5,12 @@ import (
 	"testing"
 )
 
+type Int int
+
+func (x Int) Less(than Item) bool {
+	return x < than.(Int)
+}
+
 func TestMinHeap(t *testing.T) {
 	h := NewMin()
 
